@@ -1,0 +1,25 @@
+{
+  "name": "astro-project",
+  "version": "1.0.0",
+  "description": "Proyecto Astro para mostrar la lista de bancos desde una API",
+  "main": "index.js",
+  "scripts": {
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "prettier": "^2.0.0"
+  },
+  "keywords": [
+    "astro",
+    "api",
+    "bancos"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT"
+}

@@ -1,0 +1,29 @@
+---
+const { onMount } = Astro;
+
+let bancos = [];
+
+onMount(async () => {
+  const response = await fetch('https://bsrw-api4.onrender.com/obtenerBancos');
+  if (response.ok) {
+    bancos = await response.json();
+  } else {
+    console.error('Error al obtener la lista de bancos:', response.statusText);
+  }
+});
+
+---
+
+<ul>
+  {bancos.length > 0 ? (
+    bancos.map(banco => (
+      <li key={banco.id}>
+        <h3>{banco.nombre}</h3>
+        <p>Sucursal: {banco.sucursal}</p>
+        <p>Formas de Pago: {banco.formasPago.join(', ')}</p>
+      </li>
+    ))
+  ) : (
+    <li>No se encontraron bancos.</li>
+  )}
+</ul>
